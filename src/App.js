@@ -1,7 +1,16 @@
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Routes from './routes';
+import Header from './components/Header';
+import store from './store';
+
 export default function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
+    </Provider>
   );
 }
